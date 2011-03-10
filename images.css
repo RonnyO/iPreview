@@ -1,4 +1,4 @@
 #gallery {}
 #gallery .image-container {}
-#gallery .image-container summary {display: none;}
+#gallery .image-container details {display: none;}
 #gallery .image {border: none;}
