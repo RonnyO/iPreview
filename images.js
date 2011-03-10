@@ -1,16 +1,28 @@
 (function($){
-  $.fn.images = function(options) {
+  $.fn.images = function(options){
   
-     var settings = {
+	var that = this;
+	
+    var settings = {
 		previewPath: 'preview/',	  
     };
-
-    return this.each(function() {        
+	
+	var methods = {
+		show: function(ev){
+			console.log('show');
+		},
+		hide: function(ev){
+			console.log('hide');
+		},
+		resize: function(){}
+	};
+	
+    return $(this).each(function(){        
       if (options) { 
         $.extend(settings, options);
       }
 	  
-	  console.log(this);
+	  $(this).hover(methods.show, methods.hide);
     });
   };
 })(jQuery);
