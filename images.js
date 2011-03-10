@@ -9,9 +9,8 @@
       if (options) { 
         $.extend(settings, options);
       }
-
-      // Image Gallery plugin code here
-
+	  
+	  console.log(this);
     });
   };
 })(jQuery);
