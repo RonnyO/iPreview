@@ -8,11 +8,15 @@
     };
 	
 	var methods = {
+		init: function(){
+			that.$preview = $('<div id="imagePreview">').appendTo('#gallery');
+		}(),
 		show: function(ev){
-			console.log('show');
+			$(this).find('.details').clone().appendTo(that.$preview);
+			that.$preview.animate({});
 		},
 		hide: function(ev){
-			console.log('hide');
+			that.$preview.empty();
 		},
 		resize: function(){}
 	};
