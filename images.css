@@ -1,9 +1,8 @@
 #gallery {padding: 20px 10px;}
-#gallery .image-container {}
+#gallery .image-container {position: relative; display: inline-block; margin: 8px 4px;}
 #gallery .image-container .details {display: none;}
 #gallery .image {
 	border: none;
-	margin: 8px 4px;
 	max-height: 140px;
 	vertical-align: middle;
 }
