@@ -1,4 +1,9 @@
-#gallery {}
+#gallery {padding: 20px 10px;}
 #gallery .image-container {}
 #gallery .image-container .details {display: none;}
-#gallery .image {border: none;}
+#gallery .image {
+	border: none;
+	margin: 8px 4px;
+	max-height: 140px;
+	vertical-align: middle;
+}
