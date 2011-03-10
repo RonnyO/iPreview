@@ -1,1 +1,7 @@
-$.fn.images = $.fn.images || {};
+(function($){
+  $.fn.images = function() {
+  
+    // Do your awesome plugin stuff here
+
+  };
+})(jQuery);
