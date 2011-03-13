@@ -1,7 +1,9 @@
 (function( $ ){
 	var that = {preview: null};
     var settings = {
-		previewPath: 'preview/'
+		previewPath: 'preview/',
+		maxWidth: 250,
+		maxHeight: 250
     };
 	
 
@@ -24,15 +26,26 @@
 		show: function(ev){
 			methods.hide();
 			$(this).clone().appendTo(that.preview);
-			
-			that.preview.show().css({
-				top: $(this).position().top + 1,
-				left: $(this).position().left - 3
-			})
-			.animate({});
+						
+			that.preview
+				.removeClass('initial')
+				.css({
+					top: $(this).position().top + 1,
+					left: $(this).position().left - 3,
+					width: $(this).width(),
+					height: $(this).height()
+				})
+				.show()
+				.animate({
+					width:  settings.maxWidth,
+					height: settings.maxHeight
+				}, 500);
 		},
 		hide: function(){
-			that.preview.hide().empty();
+			that.preview
+				.stop()
+				.hide()
+				.empty();
 		},
 		resize: function(){}
 	};
