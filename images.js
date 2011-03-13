@@ -14,6 +14,7 @@
 			}
 			that.preview = $('<div id="imagePreview">').appendTo('body');
 			that.preview.bind('mouseleave.images', methods.hide);
+			$('window').bind('beforeunload', methods.destroy);
 			
 			return $(this).each(function(){
 				$(this).bind('mouseover.images', methods.show);
@@ -39,7 +40,7 @@
 				.animate({
 					width:  settings.maxWidth,
 					height: settings.maxHeight
-				}, 500);
+				}, 300);
 		},
 		hide: function(){
 			that.preview
