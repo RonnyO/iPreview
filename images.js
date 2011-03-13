@@ -22,7 +22,7 @@
 			if ( that.preview ) that.preview.remove();
 		},
 		show: function(ev){
-			//methods.hide();
+			methods.hide();
 			console.log('showing');
 			$(this).clone().appendTo(that.preview);
 			
