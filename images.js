@@ -23,7 +23,6 @@
 		},
 		show: function(ev){
 			methods.hide();
-			console.log('showing');
 			$(this).clone().appendTo(that.preview);
 			
 			that.preview.show().css({
@@ -33,7 +32,6 @@
 			.animate({});
 		},
 		hide: function(){
-			console.log('hiding');
 			that.preview.hide().empty();
 		},
 		resize: function(){}
