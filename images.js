@@ -1,10 +1,10 @@
-(function($){
-  $.fn.images = function(options){
+(function( $ ){
+  $.fn.images = function( options ){
   
 	var that = this;
 	
     var settings = {
-		previewPath: 'preview/',	  
+		previewPath: 'preview/'	  
     };
 	
 	var methods = {
@@ -13,6 +13,7 @@
 		}(),
 		show: function(ev){
 			$(this).find('.details').clone().appendTo(that.$preview);
+			console.log($(this).offset());
 			that.$preview.animate({});
 		},
 		hide: function(ev){
@@ -22,11 +23,11 @@
 	};
 	
     return $(this).each(function(){        
-      if (options) { 
+      if ( options ) { 
         $.extend(settings, options);
       }
 	  
 	  $(this).hover(methods.show, methods.hide);
     });
   };
-})(jQuery);
+})( jQuery );
