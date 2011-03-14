@@ -1,9 +1,9 @@
 .iPreview {padding: 20px 10px;}
 .iPreview .image-container {position: relative; display: inline-block; margin: 8px 4px;}
 .iPreview .image-container:hover {
-	-webkit-box-shadow: 0 0 9px rgba(100,100,100,0.3);
-	-moz-box-shadow: 	0 0 9px rgba(100,100,100,0.3);
-	box-shadow: 		0 0 9px rgba(100,100,100,0.3);
+	-webkit-box-shadow: 0 0 13px rgba(100,100,100,0.5);
+	-moz-box-shadow: 	0 0 13px rgba(100,100,100,0.5);
+	box-shadow: 		0 0 13px rgba(100,100,100,0.5);
 }
 .iPreview .image-container .details {display: none;}
 .iPreview .image {
