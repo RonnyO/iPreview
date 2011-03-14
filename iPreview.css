@@ -12,11 +12,11 @@
 	vertical-align: middle;
 }
 
-#imagePreview {
+#iPreview {
 	position: absolute; background: #FFF; padding: 7px;
 	-webkit-box-shadow: 0 0 9px rgba(100,100,100,0.3);
 	-moz-box-shadow: 	0 0 9px rgba(100,100,100,0.3);
 	box-shadow: 		0 0 9px rgba(100,100,100,0.3);
 }
 
-#imagePreview img {border: none; width: 100%;}
+#iPreview img {border: none; width: 100%;}
