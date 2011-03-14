@@ -397,11 +397,37 @@
 		</details>
 	</section>
 </article>
+
+<div id="second">
+	<section class="image-container">
+		<a href="http://www.google.com"><img src="content/images_053.jpg" class="image" alt="פרפר" /></a>
+		<details class="details">
+			<h3><a href="http://www.google.com">שם התמונה</a></h3>
+			<p>51px x 100px</p>
+		</details>
+	</section>
+	<section class="image-container">
+	<a href="http://www.google.com"><img src="content/images_054.jpg" class="image" alt="פרפר" /></a>
+		<details class="details">
+			<h3><a href="http://www.google.com">שם התמונה</a></h3>
+			<p>51px x 100px</p>
+		</details>
+	</section>
+	<section class="image-container">
+		<a href="http://www.google.com"><img src="content/images_055.jpg" class="image" alt="פרפר" /></a>
+			<details class="details">
+			<h3><a href="http://www.google.com">שם התמונה</a></h3>
+		<p>51px x 100px</p>
+	</details>
+</section>
+</div>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 <script src="iPreview.js"></script>
 
 <script>
-$('.image-container').iPreview();
+$('#gallery .image-container').iPreview();
+$('#second .image-container').iPreview({maxWidth: 500});
 </script>
 </body>
 </html>

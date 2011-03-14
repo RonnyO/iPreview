@@ -11,9 +11,10 @@
 			if ( options ) { 
 				$.extend(settings, options);
 			}
-			$.iPreview.preview = $('<div id="iPreview">').appendTo('body');
+			$.iPreview.preview = $.iPreview.preview || $('<div id="iPreview">').appendTo('body');
 			$.iPreview.preview.bind('mouseleave.iPreview', methods.hide);
 			$('window').bind('beforeunload', methods.destroy);
+			$(this).parent().addClass('iPreview');
 			
 			return $(this).each(function(){
 				$(this).bind('mouseover.iPreview', methods.show);
