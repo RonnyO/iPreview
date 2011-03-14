@@ -14,9 +14,9 @@
 
 #iPreview {
 	position: absolute; background: #FFF; padding: 7px;
-	-webkit-box-shadow: 0 0 9px rgba(100,100,100,0.3);
-	-moz-box-shadow: 	0 0 9px rgba(100,100,100,0.3);
-	box-shadow: 		0 0 9px rgba(100,100,100,0.3);
+	-webkit-box-shadow: 0 0 13px rgba(100,100,100,0.5);
+	-moz-box-shadow: 	0 0 13px rgba(100,100,100,0.5);
+	box-shadow: 		0 0 13px rgba(100,100,100,0.5);
 }
 
 #iPreview .details {background: red;}
