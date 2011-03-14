@@ -46,6 +46,7 @@
 				.animate({
 					width: previewWidth,
 					height: previewHeight,
+					top: $this.position().top + 1 - (settings.previewHeight - height) / 2,
 					left: $this.position().left - 3 - (previewWidth - width) / 2
 				}, 300);
 		},
