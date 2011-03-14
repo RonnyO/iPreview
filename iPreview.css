@@ -19,4 +19,5 @@
 	box-shadow: 		0 0 9px rgba(100,100,100,0.3);
 }
 
+#iPreview .details {background: red;}
 #iPreview img {border: none; width: 100%;}

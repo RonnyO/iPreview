@@ -4,8 +4,7 @@
   $.fn.iPreview = function( method ){	
 	var settings = {
 		previewPath: null,
-		maxWidth: 250,
-		maxHeight: 250
+		previewHeight: 250
 	};
 	
 	var methods = {
@@ -26,33 +25,26 @@
 		},
 		show: function(ev){
 			methods.hide();
-			var $img = $(this);
-			$img.clone().appendTo($.iPreview.preview);
-			var detailsHeight = $img.find('details').height();
-			var width =  $img.width(),
-				height = $img.height(),
-				previewHeight;
-			
-			var delta = settings.maxHeight - (height + detailsHeight);
-			if(delta > 0) {
-				previewHeight = height + detailsHeight
-			} else {
-				height -= delta;
-				previewHeight = settings.maxHeight - delta;
-			}			
-			
+			var $this = $(this),
+				dup = $this.clone().appendTo($.iPreview.preview),
+				details = $this.find('details'),
+				detailsHeight = $this.find('details').height(),
+				width =  $this.width(),
+				height = $this.height(),
+				previewWidth = (settings.previewHeight / height) * width;
+				
 			$.iPreview.preview
 				.removeClass('initial')
 				.css({
-					top: $(this).position().top + 1,
-					left: $(this).position().left - 3,
+					top: $this.position().top + 1,
+					left: $this.position().left - 3,
 					width: width,
 					height: height
 				})
 				.show()
 				.animate({
-					width:  'auto',
-					height: previewHeight
+					width: previewWidth,
+					height: settings.previewHeight + detailsHeight
 				}, 300);
 		},
 		hide: function(){
