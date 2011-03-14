@@ -4,7 +4,7 @@
   $.fn.iPreview = function( method ){	
 	var settings = {
 		previewPath: null,
-		previewHeight: 250
+		previewHeight: 200
 	};
 	
 	var methods = {
@@ -31,7 +31,8 @@
 				detailsHeight = $this.find('details').height(),
 				width =  $this.width(),
 				height = $this.height(),
-				previewWidth = (settings.previewHeight / height) * width;
+				previewWidth = (settings.previewHeight / height) * width,
+				previewHeight = settings.previewHeight + detailsHeight;
 				
 			$.iPreview.preview
 				.removeClass('initial')
@@ -44,7 +45,8 @@
 				.show()
 				.animate({
 					width: previewWidth,
-					height: settings.previewHeight + detailsHeight
+					height: previewHeight,
+					left: $this.position().left - 3 - (previewWidth - width) / 2
 				}, 300);
 		},
 		hide: function(){
