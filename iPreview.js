@@ -1,16 +1,16 @@
 (function( $ ){
 	$.iPreview = {preview: null};
-    var settings = {
-		previewPath: 'preview/',
+
+  $.fn.iPreview = function( method ){	
+	var settings = {
+		previewPath: null,
 		maxWidth: 250,
 		maxHeight: 250
-    };
-
+	};
+	
 	var methods = {
 		init: function( options ){
-			if ( options ) { 
-				$.extend(settings, options);
-			}
+			if ( options ) $.extend(settings, options);
 			$.iPreview.preview = $.iPreview.preview || $('<div id="iPreview">').appendTo('body');
 			$.iPreview.preview.bind('mouseleave.iPreview', methods.hide);
 			$('window').bind('beforeunload', methods.destroy);
@@ -63,7 +63,7 @@
 		},
 		resize: function(){}
 	};
-  $.fn.iPreview = function( method ){
+	
 	// Method calling logic
 	if ( methods[method] ) {
 		return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
