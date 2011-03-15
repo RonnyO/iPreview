@@ -1,25 +1,31 @@
 (function( $ ){
 	$.iPreview = {
-		preview: null
+		preview: null,
+		boundOneTimeEvents: false
 	};
 
-  $.fn.iPreview = function( method ){	
+  $.fn.iPreview = function( method ){
 	var settings = {
 		previewPath: null,
 		previewHeight: 200
 	};
-	
+
 	var methods = {
 		init: function( options ){
 			if ( options ) $.extend(settings, options);
 			$.iPreview.preview = $.iPreview.preview || $('<div id="iPreview">').appendTo('body');
-			$.iPreview.preview.bind('mouseleave.iPreview', methods.hide);
-			$('window').bind('beforeunload', methods.destroy);
+			methods.bindOneTimeEvents();
 			$(this).parent().addClass('iPreview');
 			
 			return $(this).each(function(){
 				$(this).bind('mouseover.iPreview', methods.show);
 			});
+		},
+		bindOneTimeEvents: function(){
+			if ($.iPreview.boundOneTimeEvents) return false;
+			$.iPreview.preview.bind('mouseleave.iPreview', methods.hide);
+			$('window').bind('beforeunload.iPreview', methods.destroy);
+			$.iPreview.boundOneTimeEvents = true;
 		},
 		destroy: function(){
 			$(this).unbind('.iPreview');
@@ -65,7 +71,7 @@
 					left: previewLeft
 				}, 300);
 		},
-		hide: function(){
+		hide: function(ev){
 			$.iPreview.preview
 				.stop()
 				.hide()
