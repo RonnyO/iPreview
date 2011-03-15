@@ -27,12 +27,20 @@
 			methods.hide();
 			var $this = $(this),
 				dup = $this.clone().appendTo($.iPreview.preview),
-				details = $this.find('details'),
-				detailsHeight = $this.find('details').height(),
+				details = $this.find('details');
+				detailsHeight = details.height() - 7,
 				width =  $this.width(),
 				height = $this.height(),
 				previewWidth = (settings.previewHeight / height) * width,
-				previewHeight = settings.previewHeight + detailsHeight;
+				previewHeight = settings.previewHeight + detailsHeight,
+				previewTop = $this.position().top + 1 - (settings.previewHeight - height) / 2 - 7 ,
+				previewLeft = $this.position().left - 3 - (previewWidth - width) / 2 - 7
+
+				previewTop = Math.min(Math.max(previewTop, 13, window.pageYOffset + 13), window.pageYOffset + window.innerHeight - previewHeight - 18);
+				previewLeft = Math.max(previewLeft, 13);
+				
+				var widthDelta = (previewLeft + previewWidth + 13) - $(window).width();
+				if (widthDelta > 0) previewLeft -= widthDelta + 15;
 				
 			$.iPreview.preview
 				.removeClass('initial')
@@ -46,8 +54,8 @@
 				.animate({
 					width: previewWidth,
 					height: previewHeight,
-					top: $this.position().top + 1 - (settings.previewHeight - height) / 2,
-					left: $this.position().left - 3 - (previewWidth - width) / 2
+					top: previewTop ,
+					left: previewLeft
 				}, 300);
 		},
 		hide: function(){
