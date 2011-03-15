@@ -25,10 +25,10 @@
 		},
 		show: function(ev){
 			methods.hide();
-			var $this = $(this),
-				dup = $this.clone().appendTo($.iPreview.preview),
-				details = $this.find('details');
-				detailsHeight = details.height() - 7,
+			var $this = $(this);
+				$this.clone().appendTo($.iPreview.preview);
+			var details = $this.find('details'),
+				detailsHeight = details.height() + 5,
 				width =  $this.width(),
 				height = $this.height(),
 				previewWidth = (settings.previewHeight / height) * width,
