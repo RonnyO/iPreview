@@ -19,5 +19,5 @@
 	box-shadow: 		2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-#iPreview .details {background: red;}
+#iPreview a {display: inline-block; width: 100%;}
 #iPreview img {border: none; width: 100%;}
