@@ -51,7 +51,7 @@
 				// mask covers the original image and is unified to the tooltip for the mouseleave event
 				maskTop = $this.offset().top - $(window).scrollTop(),	// $(window).scrollTop() --> distance between the viewport's current top and the begining of the document
 				maskLeft = $this.offset().left - $(window).scrollLeft();// $(window).scrollLeft() --> distance between the viewport's current left and the begining of the row
-			previewTop = Math.min(Math.max(previewTop, 13, window.pageYOffset + 13), window.pageYOffset + window.innerHeight - previewHeight - 18);
+			previewTop = Math.min(Math.max(previewTop, 13, $(window).scrollTop() + 13), $(window).scrollTop() + $(window).innerHeight() - previewHeight - 18);
 			previewLeft = Math.max(previewLeft, 13);
 			var widthDelta = (previewLeft + previewWidth + 13) - $(window).width();
 			if (widthDelta > 0) previewLeft -= widthDelta + 15;
