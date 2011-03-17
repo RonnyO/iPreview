@@ -79,8 +79,7 @@
 				.stop()
 				.hide()
 				.empty();
-		},
-		resize: function(){}
+		}
 	};
 	
 	// Method calling logic
