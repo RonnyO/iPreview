@@ -32,13 +32,6 @@
 			if ( $.iPreview.preview ) $.iPreview.preview.remove();
 		},
 		show: function(ev){
-			/*if(ev && $.iPreview.$this) {
-			console.log($(this)[0] == $.iPreview.$this[0]);
-				if($(this)[0] == $.iPreview.$this[0]) {
-					console.log('dont stop me now');
-					return false;
-				}
-			}*/
 			methods.hide();
 			var $this = $.iPreview.$this = $(this),
 				dup = $this.clone().appendTo($.iPreview.preview);
@@ -49,12 +42,22 @@
 				previewWidth = (settings.previewHeight / height) * width,
 				previewHeight = settings.previewHeight + detailsHeight,
 				previewTop = $this.position().top + 1 - (settings.previewHeight - height) / 2 - 7,
-				previewLeft = $this.position().left - 3 - (previewWidth - width) / 2 - 7;
+				previewLeft = $this.position().left - 3 - (previewWidth - width) / 2 - 7,
+				maskTop = $this.offset().top-$(window).scrollTop(),
+				maskLeft = $this.offset().left-$(window).scrollLeft();
 			previewTop = Math.min(Math.max(previewTop, 13, window.pageYOffset + 13), window.pageYOffset + window.innerHeight - previewHeight - 18);
 			previewLeft = Math.max(previewLeft, 13);
 			var widthDelta = (previewLeft + previewWidth + 13) - $(window).width();
 			if (widthDelta > 0) previewLeft -= widthDelta + 15;
-
+			
+			$.iPreview.mask = $('<div id="iPreviewMask">').appendTo($.iPreview.preview);
+			$.iPreview.mask.css({
+				left: maskLeft,
+				top: maskTop,
+				width: width,
+				height: height
+			});
+			
 			$.iPreview.preview
 				.removeClass('initial')
 				.css({
