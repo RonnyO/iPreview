@@ -20,7 +20,7 @@
 }
 
 #iPreview .image-container {position: relative; z-index: 10;}
-#iPreviewMask {position: fixed; z-index:5;}
+#iPreviewMask {position: fixed; z-index:5; opacity: 0; filter: alpha(opacity:0); }
 
 #iPreview a {display: inline-block; width: 100%;}
 #iPreview img {border: none; width: 100%;}
