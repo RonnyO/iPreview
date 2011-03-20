@@ -1,4 +1,4 @@
-.iPreview {padding: 20px 10px;}
+.iPreview {padding: 20px 10px; text-align: justify;}
 .iPreview .image-container {position: relative; display: inline-block; margin: 8px 4px;}
 .iPreview .image-container:hover {
 	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
