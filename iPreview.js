@@ -1,5 +1,5 @@
 (function( $ ){
-	$.iPreview = {
+	$.iPreview = { 
 		preview: null,
 		boundOneTimeEvents: false
 	};
