@@ -1,26 +1,59 @@
-.iPreview {padding: 20px 10px; text-align: justify;}
-.iPreview .image-container {position: relative; display: inline-block; margin: 8px 4px;}
-.iPreview .image-container:hover {
-	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: 	2px 2px 10px rgba(0, 0, 0, 0.4);
-	box-shadow: 		2px 2px 10px rgba(0, 0, 0, 0.4);
+.iPreview
+{
+    padding: 20px 10px;
+    text-align: justify;
 }
-.iPreview .image-container .details {display: none;}
-.iPreview .image {
-	border: none;
-	max-height: 140px;
-	vertical-align: middle;
+.iPreview .image-container
+{
+    position: relative;
+    display: inline-block;
+    margin: 8px 4px;
+}
+.iPreview .image-container:hover
+{
+    -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+.iPreview .image-container .details
+{
+    display: none;
+}
+.iPreview .image
+{
+    border: none;
+    max-height: 140px;
+    vertical-align: middle;
 }
 
-#iPreview {
-	position: absolute; background: #FFF; padding: 7px;
-	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow: 	2px 2px 10px rgba(0, 0, 0, 0.4);
-	box-shadow: 		2px 2px 10px rgba(0, 0, 0, 0.4);
+#iPreview
+{
+    position: absolute;
+    background: #FFF;
+    padding: 7px;
+    z-index: 10;
+    -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-#iPreview .image-container {position: relative; z-index: 10;}
-#iPreviewMask {position: fixed; z-index:5; opacity: 0; filter: alpha(opacity:0); }
-
-#iPreview a {display: inline-block; width: 100%;}
-#iPreview img {border: none; width: 100%;}
+#iPreview .image-container
+{
+    position: relative;
+    z-index: 10;
+}
+#iPreviewMask
+{
+    position: fixed;
+    z-index: 5;
+}
+#iPreview a
+{
+    display: inline-block;
+    width: 100%;
+}
+#iPreview img
+{
+    border: none;
+    width: 100%;
+}

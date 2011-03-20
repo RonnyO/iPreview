@@ -1,27 +1,48 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<link href="iPreview.css" rel="stylesheet">
-	<title>Google-Images jQuery Plugin</title>
-	<!--[if lt IE 9]>
+    <meta charset="UTF-8">
+    <link href="iPreview.css" rel="stylesheet">
+    <title>Google-Images jQuery Plugin</title>
+    <!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<style>
-		article, aside, details, figcaption, figure,
-		footer, header, hgroup, menu, nav, section {
-		  display: block;
-		}
-		
-		body {margin: 0; font-family: sans-serif; font-size: 16px;}
-		h3, p {margin: 0;}
-		details {font-size: 14px;}
-		details h3 {font-size: 16px; margin: 3px 0;}
-		details a {color: #446688;}
-	</style>
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="ie.css" />
+    <![endif]-->
+    <style>
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+        {
+            display: block;
+        }
+        
+        body
+        {
+            margin: 0;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+        h3, p
+        {
+            margin: 0;
+        }
+        details
+        {
+            font-size: 14px;
+        }
+        details h3
+        {
+            font-size: 16px;
+            margin: 3px 0;
+        }
+        details a
+        {
+            color: #446688;
+        }
+    </style>
 </head>
 <body>
-<article id="gallery">
+    <article id="gallery">
 	<section class="image-container">
 		<a href="http://www.google.com"><img src="content/images_001.jpg" class="image" alt="פרפר" /></a>
 		<details class="details">
@@ -409,37 +430,34 @@
 		</details>
 	</section>
 </article>
-
-<div id="second">
-	<section class="image-container">
+    <div id="second">
+        <section class="image-container">
 		<a href="http://www.google.com"><img src="content/images_053.jpg" class="image" alt="פרפר" /></a>
 		<details class="details">
 			<h3><a href="http://www.google.com">Image Title</a></h3>
 			<p>51px x 100px</p>
 		</details>
 	</section>
-	<section class="image-container">
+        <section class="image-container">
 	<a href="http://www.google.com"><img src="content/images_054.jpg" class="image" alt="פרפר" /></a>
 		<details class="details">
 			<h3><a href="http://www.google.com">Image Title</a></h3>
 			<p>51px x 100px</p>
 		</details>
 	</section>
-	<section class="image-container">
+        <section class="image-container">
 		<a href="http://www.google.com"><img src="content/images_055.jpg" class="image" alt="פרפר" /></a>
 			<details class="details">
 			<h3><a href="http://www.google.com">Image Title</a></h3>
 		<p>51px x 100px</p>
 	</details>
 </section>
-</div>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-<script src="iPreview.js"></script>
-
-<script>
-$('#gallery .image-container').iPreview();
-$('#second .image-container').iPreview({previewHeight: 400});
-</script>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="iPreview.js"></script>
+    <script>
+        $('#gallery .image-container').iPreview();
+        $('#second .image-container').iPreview({ previewHeight: 400 });
+    </script>
 </body>
 </html>
