@@ -1,3 +1,4 @@
+// self invoked function
 (function( $ ){
 	$.iPreview = { 
 		preview: null,
