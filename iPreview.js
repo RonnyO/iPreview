@@ -1,5 +1,7 @@
 // self invoked function
 (function( $ ){
+	var $win = $(window);
+	
 	$.iPreview = { 
 		preview: null,
 		boundOneTimeEvents: false
@@ -8,7 +10,8 @@
   $.fn.iPreview = function( method ){
 	var settings = {
 		previewPath: null,
-		previewHeight: 200
+		previewHeight: 200,
+		duration: 300
 	};
 
 	var methods = {
@@ -50,12 +53,12 @@
 				// take into consideration tooltip's padding (7)
 				previewLeft = ($this.position().left - 3) - (previewWidth - width) / 2 - 7;
 				// mask covers the original image and is unified to the tooltip for the mouseleave event
-				maskTop = $this.offset().top - $(window).scrollTop();
-				maskLeft = $this.offset().left - $(window).scrollLeft();
+				maskTop = $this.offset().top - $win.scrollTop();
+				maskLeft = $this.offset().left - $win.scrollLeft();
 				
-			previewTop = Math.min(Math.max(previewTop, 13, $(window).scrollTop() + 13), $(window).scrollTop() + $(window).height() - previewHeight - 27);
+			previewTop = Math.min(Math.max(previewTop, 13, $win.scrollTop() + 13), $win.scrollTop() + $win.height() - previewHeight - 27);
             previewLeft = Math.max(previewLeft, 13);
-			var widthDelta = (previewLeft + previewWidth + 11) - $(window).width();
+			var widthDelta = (previewLeft + previewWidth + 11) - $win.width();
 			if (widthDelta > 0) previewLeft -= widthDelta + 15;
 			
 			$.iPreview.mask = $('<div id="iPreviewMask">').appendTo($.iPreview.preview);
@@ -79,7 +82,7 @@
 					height: previewHeight,
 					top: previewTop ,
 					left: previewLeft
-				}, 300);
+				}, settings.duration);
 		},
 		hide: function(ev){
 			$.iPreview.preview
