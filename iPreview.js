@@ -53,9 +53,9 @@
 				maskTop = $this.offset().top - $(window).scrollTop();
 				maskLeft = $this.offset().left - $(window).scrollLeft();
 				
-			previewTop = Math.min(Math.max(previewTop, 13, $(window).scrollTop() + 13), $(window).scrollTop() + $(window).height() - previewHeight - 18);
+			previewTop = Math.min(Math.max(previewTop, 13, $(window).scrollTop() + 13), $(window).scrollTop() + $(window).height() - previewHeight - 27);
             previewLeft = Math.max(previewLeft, 13);
-			var widthDelta = (previewLeft + previewWidth + 13) - $(window).width();
+			var widthDelta = (previewLeft + previewWidth + 11) - $(window).width();
 			if (widthDelta > 0) previewLeft -= widthDelta + 15;
 			
 			$.iPreview.mask = $('<div id="iPreviewMask">').appendTo($.iPreview.preview);
