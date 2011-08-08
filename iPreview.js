@@ -36,22 +36,23 @@
 			methods.hide();
 			var $this = $.iPreview.$this = $(this),
 				dup = $this.clone().appendTo($.iPreview.preview);
-			var details = $this.find('details'),
-				detailsHeight = details.height() + 5,
+			var details = $this.find('.details');
+				detailsHeight = details.height() + 5;
 				width =  $this.width(),		// width of image in gallery
 				height = $this.height(),	// height of image in gallery
 				// tooltip total width - calculated according to the proportion between the heights provided
-				previewWidth = (settings.previewHeight / height) * width,	
-				previewHeight = settings.previewHeight + detailsHeight,	// tootltip's total height
+				previewWidth = (settings.previewHeight / height) * width;
+				previewHeight = settings.previewHeight + detailsHeight;	// tootltip's total height
 				// tooltip's top location relative to its image - lift it by half of the distance between the image and the tooltip heights.
 				// take into consideration tooltip's padding (7)
-				previewTop = ($this.position().top + 1)	- (settings.previewHeight - height) / 2 - 7,	
+				previewTop = ($this.position().top + 1)	- (settings.previewHeight - height) / 2 - 7;	
 				// tooltip's left location relative to its image - take it left by half of the distance between the image and the tooltip widths.
 				// take into consideration tooltip's padding (7)
-				previewLeft = ($this.position().left - 3) - (previewWidth - width) / 2 - 7,
+				previewLeft = ($this.position().left - 3) - (previewWidth - width) / 2 - 7;
 				// mask covers the original image and is unified to the tooltip for the mouseleave event
-				maskTop = $this.offset().top - $(window).scrollTop(),
+				maskTop = $this.offset().top - $(window).scrollTop();
 				maskLeft = $this.offset().left - $(window).scrollLeft();
+				
 			previewTop = Math.min(Math.max(previewTop, 13, $(window).scrollTop() + 13), $(window).scrollTop() + $(window).height() - previewHeight - 18);
             previewLeft = Math.max(previewLeft, 13);
 			var widthDelta = (previewLeft + previewWidth + 13) - $(window).width();
@@ -66,7 +67,6 @@
 			});
 			
 			$.iPreview.preview
-				.removeClass('initial')
 				.css({
 					top: $this.position().top + 1,
 					left: $this.position().left - 3,
