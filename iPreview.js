@@ -1,4 +1,10 @@
-// self invoked function
+/*
+ * iPreview v0.15
+ * https://github.com/RonnyO/iPreview/
+ *
+ * Copyright 2011, Ronny Orbach, Shany Lev, Konstantin Shnaider
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ */
 (function( $ ){
 	var $win = $(window);
 	
