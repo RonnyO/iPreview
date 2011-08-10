@@ -15,7 +15,6 @@
 
   $.fn.iPreview = function( method ){
 	var settings = {
-		previewPath: null,
 		previewHeight: 200,
 		duration: 300
 	};
@@ -44,7 +43,10 @@
 		show: function(ev){
 			methods.hide();
 			var $this = $.iPreview.$this = $(this),
-				dup = $this.clone().appendTo($.iPreview.preview);
+				dup = $this.clone().appendTo($.iPreview.preview),
+				$imgWithPreview = $this.find('img[data-preview]');
+				if ( $imgWithPreview.length ) methods.loadPreview($imgWithPreview);
+				
 			var details = $this.find('.details');
 				detailsHeight = details.height() + 5;
 				width =  $this.width(),		// width of image in gallery
@@ -95,6 +97,28 @@
 				.stop()
 				.hide()
 				.empty();
+		},
+		loadPreview: function($img){
+			var pageHref = document.location.href.split('/'),
+				url = $img.attr('data-preview'),
+				$previewImg = $.iPreview.preview.find('img');
+				
+			if( $previewImg.data('loaded') ) return;
+			
+			if(url) {
+				if( !/^https?:\/\//.test(url) ){
+					pageHref[pageHref.length - 1] = url;
+					url = pageHref.join('/');
+				}
+				var preview = new Image();
+				preview.onload = function(){ // need to add a security check here - Currently race conditions could cause image override.
+					if(preview.width && preview.height) {
+						$previewImg.attr('src', url);
+					}
+					$previewImg.data('loaded', true);
+				};
+				preview.src = url;
+			}
 		}
 	};
 	
