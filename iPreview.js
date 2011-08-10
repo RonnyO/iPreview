@@ -106,10 +106,6 @@
 			if( $previewImg.data('loaded') ) return;
 			
 			if(url) {
-				if( !/^https?:\/\//.test(url) ){
-					pageHref[pageHref.length - 1] = url;
-					url = pageHref.join('/');
-				}
 				var preview = new Image();
 				preview.onload = function(){ // need to add a security check here - Currently race conditions could cause image override.
 					if(preview.width && preview.height) {
